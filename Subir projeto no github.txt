@@ -1,0 +1,20 @@
+Subir projeto no github
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/AdemarTCFilho/sgpe.git
+git push -u origin master
+
+Commitar arquivos modificados ou subir novos arquivos
+
+git status
+git add *
+git status 
+git commit -m "msg"
+git push -u origin master
+
+caso não consiga, execute o comando 
+
+git push origin master --force
+
