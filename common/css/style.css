@@ -43,7 +43,7 @@ a, a:hover, a:focus {
 /*login page*/
 
 .login-body {
-    background-color: #f1f2f7;
+    background-color: #0288d133;
 }
 
 .form-signin {
@@ -52,6 +52,7 @@ a, a:hover, a:focus {
     background: #fff;
     border-radius: 5px;
     -webkit-border-radius: 5px;
+    margin-top: 5%;
 }
 
 .form-signin h2.form-signin-heading {
@@ -99,25 +100,25 @@ a, a:hover, a:focus {
 }
 
 .form-signin .btn-login {
-    background: #f67a6e;
+    background: #0288d1;
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 4px #e56b60;
+    box-shadow: 0 4px #005482;
     margin-bottom: 20px;
 }
 
 .form-signin p {
     text-align: center;
-    color: green;
+    color: #f90606;
     font-size: 16px;
     font-weight: 500;
     margin-top:10px;
 }
 
 .form-signin a {
-    color: #41cac0;
+    color: #0288d1;
 }
 
 .form-signin a:hover {
@@ -169,7 +170,7 @@ a, a:hover, a:focus {
     width: 210px;
     position: absolute;
     // float: left;
-    background: #112233;
+    background: #0288d1;
     // height: 100vh;
 }
 
@@ -228,7 +229,7 @@ ul.sidebar-menu {
 }
 
 ul.sidebar-menu li ul.sub li{
-    background: #112233;
+    background: #0481c5;
     margin-bottom: 0; 
     margin-left: 0;
     margin-right: 0;
@@ -269,7 +270,7 @@ ul.sidebar-menu li{
     margin-bottom: 5px;
     margin-left:10px;
     margin-right:10px;
-    background: #112233;
+    background: #0892de;
 }
 
 ul.sidebar-menu li.sub-menu{
@@ -282,7 +283,7 @@ ul.sidebar-menu li a span{
 }
 
 ul.sidebar-menu li a{
-    color: #b8c7ce;
+    color: #d8e6ec;
     text-decoration: none;
     display: block;
     padding: 10px 0 10px 10px;
@@ -296,7 +297,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #2A3537;
+    background: #0288d185;
     color: #fff;
     display: block;
     border-radius: 4px;
@@ -348,7 +349,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .white-bg {
-    background: #fff;
+    background: #d2efff;
     //  border-bottom: 1px solid #f1f2f7;
 }
 
@@ -415,6 +416,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     color: #2E2E2E !important;
+    transition: box-shadow .25s; box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
 }
 
 .notify-row .badge {
@@ -465,7 +467,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .dropdown-menu.extended li p.green {
-    background-color: #a9d86e;
+    background-color: #75da7a;
     color: #fff;
 }
 
@@ -570,7 +572,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     float: left;
     text-align: center;
     width: 100%;
-    background: #a9d96c;
+    background: #0288d1;
     border-radius: 0 0 3px 3px;
 }
 
@@ -763,7 +765,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .state-overview .value h1, .state-overview .value p  {
     margin: 0;
     padding: 0;
-    color: #068;
+    color: #eee;
 }
 
 .state-overview .value h1 {
@@ -796,11 +798,15 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .state-overview .yellow {
-    background: #f8d347;
+    background: #ff9800;
 }
 
 .state-overview .blue {
     background: #57c8f2;
+}
+
+.state-overview .grey {
+    background: #607d8b;
 }
 
 /*main chart*/
@@ -1074,7 +1080,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .badge.bg-warning {
-    background: #FCB322;
+    background: #ff9800;
 }
 
 .badge.bg-important {
@@ -5559,7 +5565,7 @@ a.guest-on i {
 .login{
     font-weight: 500 !important;
     background: #eee !important;
-    color: #009da7 !important;
+    color: #0288d1 !important;
 }
 .panel .panel-body .error{
     color: #fff;
@@ -5626,7 +5632,7 @@ a.guest-on i {
 }
 
 ul.sidebar-menu li a i{
-    color: #aeb2b7 !important;
+    color: #ffffff !important;
 }
 
 

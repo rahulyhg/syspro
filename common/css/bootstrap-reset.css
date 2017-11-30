@@ -555,7 +555,7 @@ table{
 
 .fa-dedent:before, .fa-outdent:before{
     content: "\f03b";
-    background: #39B27C;
+    background: #0288d1;
     padding: 6px 11px;
     color: #fff;
     //  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -571,20 +571,45 @@ table{
 }
 
 .badge.bg-important{
-    background: #1a7bb9 !important;
+    background: #00a5ff !important;
 }
 
 .state-overview .terques {
-    background: #39B27C !important;
+    background: #66bb6a!important;
 }
 
 .state-overview .blue {
-    background: #1a7bb9 !important;
+    background: #0288d1!important;
 }
 
 .state-overview .panel{
     border-radius: 0px;
     border: 1px solid #eee;
+}
+
+.state-overview .panel:hover{
+    transition: box-shadow .25s;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.card-cor-verde{
+    background-color: #75da7a!important;
+    color: #fff !important;
+}
+
+.card-cor-aluz{
+    background-color: #00a5ff!important;
+    color: #fff !important;
+}
+
+.card-cor-laranja{
+    background-color: #ffad35!important;
+    color: #fff !important;
+}
+
+.card-cor-cinza{
+    background-color: #8c9ca5!important;
+    color: #fff !important;
 }
 
 ul.sidebar-menu li a{
@@ -617,7 +642,7 @@ a.logo {
 
 .panel-heading {
     border-radius: 0px;
-    background: #5A9599;
+    background: #0288d1;
     color: #fff;
     padding-left: 10px;
     margin-top: 20px;
