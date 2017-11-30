@@ -87,10 +87,10 @@ class Sms extends MX_Controller {
             );
             if (empty($this->sms_model->getSmsSettingsById($id)->username)) {
                 $this->sms_model->addSmsSettings($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->sms_model->updateSmsSettings($data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('sms/settings');
         }
@@ -111,9 +111,9 @@ class Sms extends MX_Controller {
         if (!empty($to)) {
             $message = $this->input->post('message');
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Not Sent');
+            $this->session->set_flashdata('feedback', 'Não Enviado');
         }
         redirect('sms/sendView');
     }
@@ -135,9 +135,9 @@ class Sms extends MX_Controller {
             $to = implode(',', $to);
             $message = $this->input->post('message');
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -158,9 +158,9 @@ class Sms extends MX_Controller {
             $to = implode(',', $to);
             $message = $this->input->post('message');
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -179,9 +179,9 @@ class Sms extends MX_Controller {
             $to = implode(',', $to);
             $message = $this->input->post('message');
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -204,9 +204,9 @@ class Sms extends MX_Controller {
             $message = $this->input->post('message');
             // $message = urlencode("Test Message");
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -232,9 +232,9 @@ class Sms extends MX_Controller {
                 'recipient' => $recipient
             );
             $this->sms_model->insertSms($data);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('volunteer');
     }
@@ -265,9 +265,9 @@ class Sms extends MX_Controller {
             $message = $this->input->post('message');
             // $message = urlencode("Test Message");
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -286,9 +286,9 @@ class Sms extends MX_Controller {
             $to = implode(',', $to);
             $message = $this->input->post('message');
             file_get_contents('https://api.clickatell.com/http/sendmsg?user=' . $username . '&password=' . $password . '&api_id=' . $api_id . '&to=' . $to . '&text=' . $message);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Message Failed');
+            $this->session->set_flashdata('feedback', 'Falha na mensagem');
         }
         redirect('sms/sendView');
     }
@@ -357,9 +357,9 @@ class Sms extends MX_Controller {
                 'user' => $this->ion_auth->get_user_id()
             );
             $this->sms_model->insertSms($data);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         } else {
-            $this->session->set_flashdata('feedback', 'Not Sent');
+            $this->session->set_flashdata('feedback', 'Não Enviado');
         }
         redirect('sms/sendView');
     }
@@ -392,7 +392,7 @@ class Sms extends MX_Controller {
                 'user' => $this->ion_auth->get_user_id()
             );
             $this->sms_model->insertSms($data_p);
-            $this->session->set_flashdata('feedback', 'Message Sent');
+            $this->session->set_flashdata('feedback', 'Mensagem enviada');
         }
 
         redirect('appointment/upcoming');
@@ -461,7 +461,7 @@ class Sms extends MX_Controller {
      function delete() {
         $id = $this->input->get('id');
         $this->sms_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('sms/sent');
     }
 
