@@ -469,7 +469,7 @@
                         <?php if ($this->ion_auth->in_group(array('admin', 'Doctor', 'Nurse', 'Receptionist'))) { ?>
                             <li> <li class="sub-menu">
                                 <a href="javascript:;" >
-                                    <i class="fa fa-stethoscope"></i> 
+                                    <i class="fa fa-calendar"></i> 
                                     <span><?php echo lang('appointment'); ?></span>
                                 </a>
                                 <ul class="sub"> 

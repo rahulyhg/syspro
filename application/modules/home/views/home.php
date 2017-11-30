@@ -86,7 +86,7 @@
                     <?php } ?>
                     <section class="panel card-cor-aluz">
                         <div class="symbol blue">
-                            <i class="fa fa-medkit"></i>
+                            <i class="fa fa-list-alt"></i>
                         </div>
                         <div class="value">
                             <h1 class="">
@@ -143,7 +143,7 @@
                     <?php } ?>
                     <section class="panel card-cor-laranja">
                         <div class="symbol yellow">
-                            <i class="fa fa-plus-square-o"></i>
+                            <i class="fa fa-calendar"></i>
                         </div>
                         <div class="value">
                             <h1 class="">
@@ -285,7 +285,7 @@
                     <?php } ?>
                     <section class="panel card-cor-aluz">
                         <div class="symbol blue">
-                            <i class="fa fa-dashboard"></i>
+                            <i class="fa fa-sitemap"></i>
                         </div>
                         <div class="value">
                             <h1 class="">
