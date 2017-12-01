@@ -341,7 +341,7 @@ $lang['hospitl_amount'] = 'Montante hospitalar';
 $lang['hospitl_amount'] = 'Montante hospitalar';
 
 $lang['hospital_management_system'] = 'Sistema de Gestão Hospitalar';
-$lang['user_activity_report'] = 'Atividade dos usuários';
+$lang['user_activity_report'] = 'Faturamento';
 
 $lang['list_of_doctors'] = 'Lista de médicos';
 $lang['doctors_commission'] = 'Comissão de Médicos';

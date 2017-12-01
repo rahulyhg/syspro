@@ -273,13 +273,13 @@
 
                 <section class="panel">
                     <header class="panel-heading">
-                        <i class="fa fa-money"></i>  Expense Report
+                        <i class="fa fa-money"></i>  Relatório de despesas
                     </header>
                     <table class="table table-striped table-advance table-hover">
                         <thead>
                             <tr>
-                                <th><i class="fa fa-bullhorn"></i> Category</th>
-                                <th class="hidden-phone"><i class="fa fa-question-circle"></i> Amount</th>
+                                <th><i class="fa fa-bullhorn"></i> Categoría</th>
+                                <th class="hidden-phone"><i class="fa fa-question-circle"></i> Montante</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -590,3 +590,5 @@
 </section>
 <!--main content end-->
 <!--footer start-->
+
+
