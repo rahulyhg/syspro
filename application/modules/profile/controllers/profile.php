@@ -72,7 +72,7 @@ class Profile extends MX_Controller {
             if (!$this->ion_auth->in_group('admin')) {
                 $this->profile_model->updateProfile($ion_user_id, $data, $group_name);
             }
-            $this->session->set_flashdata('feedback', 'Updated');
+            $this->session->set_flashdata('feedback', 'Atualizada');
             // Loading View
             redirect('profile');
         }

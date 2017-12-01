@@ -123,7 +123,7 @@ class Accountant extends MX_Controller {
 
             if (empty($id)) {     // Adding New Accountant
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                     redirect('accountant/addNewView');
                 } else {
                     $dfg = 3;
@@ -133,7 +133,7 @@ class Accountant extends MX_Controller {
                     $accountant_user_id = $this->db->get_where('accountant', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->accountant_model->updateAccountant($accountant_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating Accountant
                 $ion_user_id = $this->db->get_where('accountant', array('id' => $id))->row()->ion_user_id;
@@ -144,7 +144,7 @@ class Accountant extends MX_Controller {
                 }
                 $this->accountant_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->accountant_model->updateAccountant($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('accountant');
@@ -184,7 +184,7 @@ class Accountant extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->accountant_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('accountant');
     }
 

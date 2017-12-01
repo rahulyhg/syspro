@@ -571,7 +571,7 @@ class Appointment extends MX_Controller {
 
             $patient_mobile = $this->db->get_where('patient', array('id' => $entry->patient))->row()->phone;
             $patient_name = $this->db->get_where('patient', array('id' => $entry->patient))->row()->name;
-            $info = '<br/>Pac iente: ' . $patient_name . '<br/>Tel: ' . $patient_mobile . '<br/> Médico: ' . $doctor . '<br/>Obs: ' . $entry->remarks;
+            $info = '<br/>Paciente: ' . $patient_name . '<br/>Tel: ' . $patient_mobile . '<br/> Médico: ' . $doctor . '<br/>Obs: ' . $entry->remarks;
             $jsonevents[] = array(
                 'id' => $entry->id,
                 'title' => $info,
