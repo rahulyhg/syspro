@@ -122,7 +122,7 @@ class Nurse extends MX_Controller {
             $username = $this->input->post('name');
             if (empty($id)) {     // Adding New Nurse
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                     redirect('nurse/addNewView');
                 } else {
                     $dfg = 6;
@@ -132,7 +132,7 @@ class Nurse extends MX_Controller {
                     $nurse_user_id = $this->db->get_where('nurse', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->nurse_model->updateNurse($nurse_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating Nurse
                 $ion_user_id = $this->db->get_where('nurse', array('id' => $id))->row()->ion_user_id;
@@ -143,7 +143,7 @@ class Nurse extends MX_Controller {
                 }
                 $this->nurse_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->nurse_model->updateNurse($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('nurse');
@@ -183,7 +183,7 @@ class Nurse extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->nurse_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('nurse');
     }
 

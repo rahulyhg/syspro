@@ -122,10 +122,10 @@ class Prescription extends MX_Controller {
             );
             if (empty($id)) {
                 $this->prescription_model->insertPrescription($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->prescription_model->updatePrescription($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
 
             if (!empty($admin)) {
@@ -167,7 +167,7 @@ class Prescription extends MX_Controller {
         $admin = $this->input->get('admin');
         $patient = $this->input->get('patient');
         $this->prescription_model->deletePrescription($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         if (!empty($patient)) {
             redirect('patient/caseHistory?patient_id=' . $patient);
         } elseif (!empty($admin)) {
@@ -218,10 +218,10 @@ class Prescription extends MX_Controller {
             );
             if (empty($id)) {
                 $this->prescription_model->insertPrescriptionCategory($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->prescription_model->updatePrescriptionCategory($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('prescription/prescriptionCategory');
         }
@@ -246,7 +246,7 @@ class Prescription extends MX_Controller {
     function deletePrescriptionCategory() {
         $id = $this->input->get('id');
         $this->prescription_model->deletePrescriptionCategory($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('prescription/prescriptionCategory');
     }
 

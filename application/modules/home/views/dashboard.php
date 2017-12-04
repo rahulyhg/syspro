@@ -442,7 +442,8 @@
                         <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
                             <li> <li class="sub-menu">
                                 <a href="javascript:;" >
-                                    <i class="fa fa-users"></i>
+
+                                    <i class="fa fa-stethoscope"></i>
                                     <span><?php echo lang('doctor'); ?></span>
                                 </a>
                                 <ul class="sub">
@@ -536,7 +537,7 @@
                         <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
                             <li>
                                 <a href="prescription/all" >
-                                    <i class="fa fa-stethoscope"></i>
+                                    <i class="fa fa-list-alt"></i>
                                     <span> <?php echo lang('prescription'); ?> </span>
                                 </a>
                             </li>
@@ -582,11 +583,11 @@
                         <?php if ($this->ion_auth->in_group(array('admin', 'Doctor'))) { ?>
                             <li class="sub-menu">
                                 <a href="javascript:;" >
-                                    <i class="fa  fa-medkit"></i>
+                                    <i class="fa  fa-eyedropper"></i>
                                     <span><?php echo lang('medicine'); ?></span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a  href="medicine"><i class="fa fa-medkit"></i><?php echo lang('medicine_list'); ?></a></li>
+                                    <li><a  href="medicine"><i class="fa fa-eyedropper"></i><?php echo lang('medicine_list'); ?></a></li>
                                     <li><a  href="medicine/addMedicineView"><i class="fa fa-plus-circle"></i><?php echo lang('add_medicine'); ?></a></li>
                                     <li><a  href="medicine/medicineCategory"><i class="fa fa-edit"></i><?php echo lang('medicine_category'); ?></a></li>
                                     <li><a  href="medicine/addCategoryView"><i class="fa fa-plus-circle"></i><?php echo lang('add_medicine_category'); ?></a></li>
@@ -643,11 +644,11 @@
                         <?php if ($this->ion_auth->in_group(array('admin', 'Doctor'))) { ?>
                             <li class="sub-menu">
                                 <a href="javascript:;" >
-                                    <i class="fa  fa-hdd-o"></i>
+                                    <i class="fa fa-bed"></i>
                                     <span><?php echo lang('bed'); ?></span>
                                 </a>
                                 <ul class="sub">
-                                    <li><a  href="bed"><i class="fa fa-hdd-o"></i><?php echo lang('bed_list'); ?></a></li>
+                                    <li><a  href="bed"><i class="fa fa-bed"></i><?php echo lang('bed_list'); ?></a></li>
                                     <li><a  href="bed/addBedView"><i class="fa fa-plus-circle"></i><?php echo lang('add_bed'); ?></a></li>
                                     <li><a  href="bed/bedCategory"><i class="fa fa-edit"></i><?php echo lang('bed_category'); ?></a></li>
                                     <li><a  href="bed/bedAllotment"><i class="fa fa-plus-square-o"></i><?php echo lang('bed_allotments'); ?></a></li>

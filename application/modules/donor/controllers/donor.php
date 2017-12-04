@@ -1,4 +1,4 @@
-<?php
+Adicionado<?php
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -105,10 +105,10 @@ class Donor extends MX_Controller {
             );
             if (empty($id)) {
                 $this->donor_model->insertDonor($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->donor_model->updateDonor($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('donor');
         }
@@ -133,7 +133,7 @@ class Donor extends MX_Controller {
     function delete() {
         $id = $this->input->get('id');
         $this->donor_model->deleteDonor($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('donor');
     }
 
@@ -163,7 +163,7 @@ class Donor extends MX_Controller {
         // Validating Description Field
         $this->form_validation->set_rules('status', 'Status', 'required|min_length[5]|max_length[100]');
         if ($this->form_validation->run() == FALSE) {
-             $this->session->set_flashdata('feedback', 'Validation Error !');
+             $this->session->set_flashdata('feedback', 'Erro de validação !');
             redirect('donor/bloodBank');
         } else {
             $data = array();
@@ -172,7 +172,7 @@ class Donor extends MX_Controller {
             );
 
             $this->donor_model->updateBloodBank($id, $data);
-            $this->session->set_flashdata('feedback', 'Updated');
+            $this->session->set_flashdata('feedback', 'Atualizada');
             redirect('donor/bloodBank');
         }
     }

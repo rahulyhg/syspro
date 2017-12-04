@@ -1,4 +1,4 @@
-<?php
+Adicionado<?php
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -76,10 +76,10 @@ class Symptom extends MX_Controller {
             );
             if (empty($id)) {
                 $this->symptom_model->insertSymptom($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->symptom_model->updateSymptom($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             if (!empty($for_case)) {
                 redirect('patient/caseHistory?patient_id=' . $patient);
@@ -111,7 +111,7 @@ class Symptom extends MX_Controller {
     function delete() {
         $id = $this->input->get('id');
         $this->symptom_model->deleteSymptom($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('symptom');
     }
 

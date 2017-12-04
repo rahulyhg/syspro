@@ -83,7 +83,7 @@ class Finance extends MX_Controller {
             }
             $category_name = implode(',', $cat_and_price);
         } else {
-            $this->session->set_flashdata('feedback', 'Attend the required fields');
+            $this->session->set_flashdata('feedback', 'Peencha todos os campos obrigatórios');
             redirect('finance/addPaymentView');
         }
 
@@ -261,7 +261,7 @@ class Finance extends MX_Controller {
                 );
                 $this->finance_model->insertDeposit($data1);
 
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
                 redirect("finance/invoice?id=" . "$inserted_id");
             } else {
                 
@@ -955,7 +955,7 @@ class Finance extends MX_Controller {
             );
             if (empty($id)) {
                 $this->finance_model->insertDeposit($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->finance_model->updateDeposit($id, $data);
 
@@ -967,7 +967,7 @@ class Finance extends MX_Controller {
                     $this->finance_model->updatePayment($amount_received_payment_id[0], $data_amount_received);
                 }
 
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('finance/patientPaymentHistory?patient=' . $patient);
         }
@@ -1028,7 +1028,7 @@ class Finance extends MX_Controller {
         $data1 = array();
         $data1 = array('status' => 'paid-last');
         $this->finance_model->makeStatusPaid($id, $patient_id, $data, $data1);
-        $this->session->set_flashdata('feedback', 'Paid');
+        $this->session->set_flashdata('feedback', 'Pago');
         redirect('finance/invoice?id=' . $id);
     }
 
@@ -1039,14 +1039,14 @@ class Finance extends MX_Controller {
         $data1 = array();
         $data1 = array('status' => 'paid');
         $this->finance_model->makePaidByPatientIdByStatus($id, $data, $data1);
-        $this->session->set_flashdata('feedback', 'Paid');
+        $this->session->set_flashdata('feedback', 'Pago');
         redirect('patient');
     }
 
     function makeOtStatusPaid() {
         $id = $this->input->get('id');
         $this->finance_model->makeOtStatusPaid($id);
-        $this->session->set_flashdata('feedback', 'Paid');
+        $this->session->set_flashdata('feedback', 'Pago');
         redirect("finance/otInvoice?id=" . "$id");
     }
 

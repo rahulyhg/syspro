@@ -66,7 +66,7 @@ class Receptionist extends MX_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if (!empty($id)) {
-                 $this->session->set_flashdata('feedback', 'Form Validation Error!');
+                 $this->session->set_flashdata('feedback', 'Erro de validação de formulário!');
                 redirect('receptionist/editReceptionist?id=' . $id);
             } else {
                 $data = array();
@@ -128,7 +128,7 @@ class Receptionist extends MX_Controller {
 
             if (empty($id)) {     // Adding New Receptionist
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registradoAdicionado');
                     redirect('receptionist/addNewView');
                 } else {
                     $dfg = 10;
@@ -138,7 +138,7 @@ class Receptionist extends MX_Controller {
                     $receptionist_user_id = $this->db->get_where('receptionist', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->receptionist_model->updateReceptionist($receptionist_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating Receptionist
                 $ion_user_id = $this->db->get_where('receptionist', array('id' => $id))->row()->ion_user_id;
@@ -149,7 +149,7 @@ class Receptionist extends MX_Controller {
                 }
                 $this->receptionist_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->receptionist_model->updateReceptionist($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('receptionist');
@@ -189,7 +189,7 @@ class Receptionist extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->receptionist_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('receptionist');
     }
 

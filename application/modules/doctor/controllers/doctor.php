@@ -152,7 +152,7 @@ class Doctor extends MX_Controller {
                     $doctor_user_id = $this->db->get_where('doctor', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->doctor_model->updateDoctor($doctor_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating Doctor
                 $ion_user_id = $this->db->get_where('doctor', array('id' => $id))->row()->ion_user_id;
@@ -163,7 +163,7 @@ class Doctor extends MX_Controller {
                 }
                 $this->doctor_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->doctor_model->updateDoctor($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('doctor');
@@ -204,7 +204,7 @@ class Doctor extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->doctor_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('doctor');
     }
 

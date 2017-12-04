@@ -36,8 +36,8 @@ $lang['report'] = 'Relatório';
 $lang['operation_report'] = 'Relatório de Operação';
 $lang['birth_report'] = 'Relatório de nascimento';
 $lang['donor'] = 'Doador';
-$lang['bed'] = 'Cama';
-$lang['total_bed'] = 'Cama total';
+$lang['bed'] = 'leito';
+$lang['total_bed'] = 'Total de Leitos';
 $lang['expense'] = 'Despesa';
 $lang['total_payment'] = 'Pagamento total';
 $lang['departments'] = 'Departamentos';
@@ -113,8 +113,8 @@ $lang['gender'] = 'Gênero';
 
 // Appoinytment
 
-$lang['appointments'] = 'Compromissos';
-$lang['appointment'] = 'Compromisso';
+$lang['appointments'] = 'Agendamentos';
+$lang['appointment'] = 'Agendamento';
 $lang['id'] = 'Identidade';
 $lang['date-time'] = 'Data hora';
 $lang['remarks'] = 'Observações';
@@ -230,26 +230,26 @@ $lang['others'] = 'Outras';
 
 
 // Bed
-$lang['bed'] = 'Cama';
-$lang['bed_list'] = 'Lista de camas';
-$lang['add_bed'] = 'Adicionar cama';
-$lang['edit_bed'] = 'Editar Cama';
-$lang['bed_category'] = 'Categoria de cama';
-$lang['bed_allotments'] = 'Aluguéis de cama';
+$lang['bed'] = 'leito';
+$lang['bed_list'] = 'Lista de leitos';
+$lang['add_bed'] = 'Adicionar leito';
+$lang['edit_bed'] = 'Editar leito';
+$lang['bed_category'] = 'Categoria de leito';
+$lang['bed_allotments'] = 'Aluguéis de leito';
 $lang['add_allotment'] = 'Adicionar alocação';
 $lang['edit_allotment'] = 'Editar alocação';
-$lang['bed_id'] = 'Cama Identidade';
-$lang['bed_number'] = 'Número de cama';
-$lang['add_bed_category'] = 'Adicionar categoria de cama';
-$lang['edit_bed_category'] = 'Editar categoria de cama';
+$lang['bed_id'] = 'leito Identidade';
+$lang['bed_number'] = 'Número de leito';
+$lang['add_bed_category'] = 'Adicionar categoria de leito';
+$lang['edit_bed_category'] = 'Editar categoria de leito';
 $lang['alloted_time'] = 'Tempo atribuído';
 $lang['discharge_time'] = 'Tempo de descarga';
 $lang['alloted'] = 'Alocado';
 $lang['available'] = 'acessível';
-$lang['alloted_beds'] = 'Camas aliadas';
+$lang['alloted_beds'] = 'leitos alocadas';
 
 // All Reports
-$lang['e_report'] = 'E_report';
+$lang['e_report'] = 'Relatório';
 $lang['add_report'] = 'Adicionar relatório';
 $lang['add_birth_report'] = 'Adicionar relatório de nascimento';
 $lang['add_operation_report'] = 'Adicionar relatório de operação';
@@ -271,7 +271,7 @@ $lang['system_name'] = 'Nome do sistema';
 $lang['title'] = 'Título';
 $lang['address'] = 'Endereço';
 $lang['phone'] = 'telefone';
-$lang['hospital_email'] = 'Email do hospital';
+$lang['hospital_email'] = 'Email do hospital ou Clínica';
 $lang['currency'] = 'Moeda';
 $lang['discount_type'] = 'Tipo de desconto';
 
@@ -314,7 +314,7 @@ $lang['bill_to'] = 'Projeto de lei para';
 
 $lang['patient'] = 'Paciente';
 
-$lang['refd_by_doctor'] = 'Refd By Doctor';
+$lang['refd_by_doctor'] = 'Refd By Médico';
 
 $lang['date'] = 'Encontro';
 
@@ -388,7 +388,7 @@ $lang['rate'] = 'Taxa';
 $lang['medicine_categories'] = 'Categorias de medicamentos';
 $lang['create_medicine_category'] = 'Criar categoria de medicamento';
 
-$lang['bed_categories'] = 'Categorias de cama';
+$lang['bed_categories'] = 'Categorias de leito';
 $lang['add_new_allotment'] = 'Adicionar novo alocamento';
 
 $lang['birth_report'] = 'Relatório de nascimento';
@@ -473,7 +473,7 @@ $lang['ot_discount'] = 'OT Desconto';
 $lang['gross_ot_income'] = 'Renda BR Grossida';
 
 $lang['discount_type'] = 'Tipo de desconto';
-$lang['gross_bill'] = 'Bill Gross';
+$lang['gross_bill'] = 'Conta bruta';
 
 $lang['gross_hospital_amount'] = 'Montante bruto do hospital'; 
 $lang['gross_doctors_commission'] = 'Comissão de Médicos Brutos';
@@ -491,11 +491,11 @@ $lang['gross_bill'] = 'Bruto conta';
 
 
 
-$lang['add_bed_allotment'] = 'Adicionar alocação de cama';
-$lang['edit_bed_aalotment'] = 'Editar alocação de cama';
+$lang['add_bed_allotment'] = 'Adicionar alocação de leito';
+$lang['edit_bed_aalotment'] = 'Editar alocação de leito';
 
 $lang['add_a_allotment'] = 'Adicionar uma alocação';
-$lang['no_bed_is_available_for_allotment'] = 'Nenhuma cama está disponível para alocação';
+$lang['no_bed_is_available_for_allotment'] = 'Nenhuma leito está disponível para alocação';
 $lang['payment_today'] = 'Pagamento Hoje';
 $lang['payments_today'] = 'Pagamentos hoje';
 $lang['patient_registerred_today'] = 'Paciente registrado hoje';
@@ -512,9 +512,9 @@ $lang['report_added_today'] = 'Relatório Adicionado Hoje';
 $lang['reports_added_today'] = 'Relatórios adicionados hoje';
 $lang['report_is_available_for_you'] = 'O relatório está disponível para você';
 $lang['reports_are_available_for_you'] = 'Os relatórios estão disponíveis para você Bill';
-$lang['bed_is_available'] = 'Cama disponível';
+$lang['bed_is_available'] = 'leito disponível';
 
-$lang['beds_are_available'] = 'Camas estão disponíveis';
+$lang['beds_are_available'] = 'leitos estão disponíveis';
 $lang['gross_bill'] = 'Bruto conta';
 $lang['gross_bill'] = 'Bruto conta';
 $lang['gross_bill'] = 'Bruto conta';
@@ -624,7 +624,7 @@ $lang['add_update'] = 'Adicionar / Atualizar';
 
 $lang['doctors_commission'] = 'Comissão de Médicos';
 
-$lang['total_doctors_commission'] = 'Total Doctors Commission';
+$lang['total_doctors_commission'] = 'Total Comissão de Médicos';
 
 
 
@@ -642,7 +642,7 @@ $lang['number_of_patient_treated'] = 'Número de pacientes tratados';
 
 
 $lang['all_appointments'] = 'Todas as nomeações';
-$lang['todays_appointments'] = 'Compromissos de hoje';
+$lang['todays_appointments'] = 'Agendamentos de hoje';
 $lang['all'] = 'Todos';
 $lang['add'] = 'Adicionar';
 $lang['todays'] = 'Hoje em dia';
@@ -650,7 +650,7 @@ $lang['upcoming'] = 'próximos';
 $lang['write_message'] = 'Escrever mensagem';
 $lang['sent_messages'] = 'Mensagens Enviadas';
 $lang['send_sms_to_patient'] = 'Enviar SMS para Paciente';
-$lang['reminder_message'] = 'Deseja enviar a mensagem de lembrete de compromisso ao paciente?';
+$lang['reminder_message'] = 'Deseja enviar a mensagem de lembrete de Agendamento ao paciente?';
 $lang['yes'] = 'sim';
 $lang['cancel'] = 'Cancelar';
 $lang['recipient'] = 'Recipient';

@@ -196,10 +196,10 @@ class Medicine extends MX_Controller {
             );
             if (empty($id)) {
                 $this->medicine_model->insertMedicine($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->medicine_model->updateMedicine($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('medicine');
         }
@@ -224,7 +224,7 @@ class Medicine extends MX_Controller {
         $data = array();
         $data = array('quantity' => $new_qty);
         $this->medicine_model->updateMedicine($id, $data);
-        $this->session->set_flashdata('feedback', 'Medicine Loaded');
+        $this->session->set_flashdata('feedback', 'Medicina carregada');
         redirect('medicine');
     }
 
@@ -237,7 +237,7 @@ class Medicine extends MX_Controller {
     function delete() {
         $id = $this->input->get('id');
         $this->medicine_model->deleteMedicine($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('medicine');
     }
 
@@ -282,10 +282,10 @@ class Medicine extends MX_Controller {
             );
             if (empty($id)) {
                 $this->medicine_model->insertMedicineCategory($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->medicine_model->updateMedicineCategory($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('medicine/medicineCategory');
         }
@@ -310,7 +310,7 @@ class Medicine extends MX_Controller {
     function deleteMedicineCategory() {
         $id = $this->input->get('id');
         $this->medicine_model->deleteMedicineCategory($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('medicine/medicineCategory');
     }
 

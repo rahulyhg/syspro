@@ -125,7 +125,7 @@ class Pharmacist extends MX_Controller {
             $username = $this->input->post('name');
             if (empty($id)) {     // Adding New Pharmacist
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registradoAdicionado');
                     redirect('pharmacist/addNewView');
                 } else {
                     $dfg = 7;
@@ -135,7 +135,7 @@ class Pharmacist extends MX_Controller {
                     $pharmacist_user_id = $this->db->get_where('pharmacist', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->pharmacist_model->updatePharmacist($pharmacist_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating Pharmacist
                 $ion_user_id = $this->db->get_where('pharmacist', array('id' => $id))->row()->ion_user_id;
@@ -146,7 +146,7 @@ class Pharmacist extends MX_Controller {
                 }
                 $this->pharmacist_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->pharmacist_model->updatePharmacist($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('pharmacist');
@@ -186,7 +186,7 @@ class Pharmacist extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->pharmacist_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('pharmacist');
     }
 

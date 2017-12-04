@@ -124,7 +124,7 @@ class Laboratorist extends MX_Controller {
             $username = $this->input->post('name');
             if (empty($id)) {     // Adding New laboratorist
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                     redirect('laboratorist/addNewView');
                 } else {
                     $dfg = 8;
@@ -134,7 +134,7 @@ class Laboratorist extends MX_Controller {
                     $laboratorist_user_id = $this->db->get_where('laboratorist', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->laboratorist_model->updateLaboratorist($laboratorist_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
             } else { // Updating laboratorist
                 $ion_user_id = $this->db->get_where('laboratorist', array('id' => $id))->row()->ion_user_id;
@@ -145,7 +145,7 @@ class Laboratorist extends MX_Controller {
                 }
                 $this->laboratorist_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->laboratorist_model->updateLaboratorist($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('laboratorist');
@@ -185,7 +185,7 @@ class Laboratorist extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->laboratorist_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('laboratorist');
     }
 

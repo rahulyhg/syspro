@@ -110,7 +110,7 @@ class Patient extends MX_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if (!empty($id)) {
-                 $this->session->set_flashdata('feedback', 'Validation Error !');
+                 $this->session->set_flashdata('feedback', 'Erro de validação !');
                 redirect("patient/editPatient?id=$id");
             } else {
                 $data = array();
@@ -185,7 +185,7 @@ class Patient extends MX_Controller {
 
             if (empty($id)) {     // Adding New Patient
                 if ($this->ion_auth->email_check($email)) {
-                    $this->session->set_flashdata('feedback', 'This Email Address Is Already Registered');
+                    $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                     redirect('patient/addNewView');
                 } else {
                     $dfg = 5;
@@ -195,7 +195,7 @@ class Patient extends MX_Controller {
                     $patient_user_id = $this->db->get_where('patient', array('email' => $email))->row()->id;
                     $id_info = array('ion_user_id' => $ion_user_id);
                     $this->patient_model->updatePatient($patient_user_id, $id_info);
-                    $this->session->set_flashdata('feedback', 'Added');
+                    $this->session->set_flashdata('feedback', 'Adicionado');
                 }
                 //    }
             } else { // Updating Patient
@@ -207,7 +207,7 @@ class Patient extends MX_Controller {
                 }
                 $this->patient_model->updateIonUser($username, $email, $password, $ion_user_id);
                 $this->patient_model->updatePatient($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             if (!empty($redirect)) {
@@ -279,7 +279,7 @@ class Patient extends MX_Controller {
 
 
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('feedback', 'Validation Error !');
+            $this->session->set_flashdata('feedback', 'Erro de validação !');
             redirect('patient/report?id=' . $invoice);
         } else {
 
@@ -293,10 +293,10 @@ class Patient extends MX_Controller {
 
             if (empty($id)) {     // Adding New department
                 $this->patient_model->insertDiagnosticReport($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else { // Updating department
                 $this->patient_model->updateDiagnosticReport($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('patient/report?id=' . $invoice);
@@ -370,10 +370,10 @@ class Patient extends MX_Controller {
 
             if (empty($id)) {     // Adding New department
                 $this->patient_model->insertMedicalHistory($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else { // Updating department
                 $this->patient_model->updateMedicalHistory($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect($redirect);
@@ -446,7 +446,7 @@ class Patient extends MX_Controller {
 
 
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('feedback', 'Validation Error !');
+            $this->session->set_flashdata('feedback', 'Erro de validação !');
             redirect($redirect);
         } else {
             $file_name = $_FILES['img_url']['name'];
@@ -491,11 +491,11 @@ class Patient extends MX_Controller {
                     'title' => $title,
                     'patient' => $patient_id,
                 );
-                $this->session->set_flashdata('feedback', 'Upload Error !');
+                $this->session->set_flashdata('feedback', 'Erro de upload !');
             }
 
             $this->patient_model->insertPatientMaterial($data);
-            $this->session->set_flashdata('feedback', 'Added');
+            $this->session->set_flashdata('feedback', 'Adicionado');
 
 
             redirect($redirect);
@@ -507,7 +507,7 @@ class Patient extends MX_Controller {
         $redirect = $this->input->get('redirect');
         $case_history = $this->patient_model->getMedicalHistoryById($id);
         $this->patient_model->deleteMedicalHistory($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         if ($redirect == 'case') {
             redirect('patient/caseList');
         } else {
@@ -524,7 +524,7 @@ class Patient extends MX_Controller {
             unlink($path);
         }
         $this->patient_model->deletePatientMaterial($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         if ($redirect == 'documents') {
             redirect('patient/documents');
         } else {
@@ -545,7 +545,7 @@ class Patient extends MX_Controller {
         $this->db->where('id', $ion_user_id);
         $this->db->delete('users');
         $this->patient_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('patient');
     }
 

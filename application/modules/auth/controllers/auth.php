@@ -375,7 +375,7 @@ class Auth extends CI_Controller {
 		if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin())
 		{
 			//redirect them to the home page because they must be an administrator to view this
-			return show_error('You must be an administrator to view this page.');
+			return show_error('Você deve ser um administrador para visualizar esta página.');
 		}
 
 		$id = (int) $id;

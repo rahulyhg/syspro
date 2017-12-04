@@ -223,10 +223,10 @@ class Appointment extends MX_Controller {
                     $this->load->library('../modules/sms/controllers/sms');
                     $this->sms->sendSmsDuringAppointment($patient, $doctor, $date, $s_time, $e_time);
                 }
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else { // Updating department
                 $this->appointment_model->updateAppointment($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             // Loading View
             redirect('appointment');

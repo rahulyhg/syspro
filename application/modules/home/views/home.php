@@ -230,7 +230,7 @@
                     <?php } ?>
                     <section class="panel card-cor-verde">
                         <div class="symbol terques">
-                            <i class="fa fa-home"></i>
+                            <i class="fa fa-bed"></i>
                         </div>
                         <div class="value">
                             <h1 class=" count13">
@@ -249,7 +249,7 @@
                     <?php } ?>
                     <section class="panel card-cor-aluz">
                         <div class="symbol blue">
-                            <i class="fa fa-medkit"></i>
+                            <i class="fa fa-eyedropper"></i>
                         </div>
                         <div class="value">
                             <h1 class="">

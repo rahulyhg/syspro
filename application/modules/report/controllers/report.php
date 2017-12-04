@@ -126,7 +126,7 @@ class Report extends MX_Controller {
 
         if ($this->form_validation->run() == FALSE) {
             if(!empty($id)){
-                $this->session->set_flashdata('feedback', 'Validation Error !');
+                $this->session->set_flashdata('feedback', 'Erro de validação !');
                 redirect('report/editReport?id'.$id);
             }else{
             $data = array();
@@ -148,10 +148,10 @@ class Report extends MX_Controller {
             );
             if (empty($id)) {
                 $this->report_model->insertReport($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->report_model->updateReport($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             if ($type == 'birth') {
                 redirect('report/birth');
@@ -206,7 +206,7 @@ class Report extends MX_Controller {
         $id = $this->input->get('id');
         $type = $this->report_model->getReportById($id)->report_type;
         $this->report_model->deleteReport($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         if ($type == 'birth') {
             redirect('report/birth');
         } elseif ($type == 'operation') {

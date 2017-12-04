@@ -83,10 +83,10 @@ class Bed extends MX_Controller {
             );
             if (empty($id)) {
                 $this->bed_model->insertBed($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->bed_model->updateBed($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('bed');
         }
@@ -162,10 +162,10 @@ class Bed extends MX_Controller {
             );
             if (empty($id)) {
                 $this->bed_model->insertBedCategory($data);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->bed_model->updateBedCategory($id, $data);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('bed/bedCategory');
         }
@@ -189,7 +189,7 @@ class Bed extends MX_Controller {
     function deleteBedCategory() {
         $id = $this->input->get('id');
         $this->bed_model->deleteBedCategory($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('bed/bedCategory');
     }
 
@@ -259,11 +259,11 @@ class Bed extends MX_Controller {
             if (empty($id)) {
                 $this->bed_model->insertAllotment($data);
                 $this->bed_model->updateBedByBedId($bed_id, $data1);
-                $this->session->set_flashdata('feedback', 'Added');
+                $this->session->set_flashdata('feedback', 'Adicionado');
             } else {
                 $this->bed_model->updateAllotment($id, $data);
                 $this->bed_model->updateBedByBedId($bed_id, $data1);
-                $this->session->set_flashdata('feedback', 'Updated');
+                $this->session->set_flashdata('feedback', 'Atualizada');
             }
             redirect('bed/bedAllotment');
         }
@@ -289,7 +289,7 @@ class Bed extends MX_Controller {
     function deleteAllotment() {
         $id = $this->input->get('id');
         $this->bed_model->deleteBedAllotment($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('bed/bedAllotment');
     }
 
