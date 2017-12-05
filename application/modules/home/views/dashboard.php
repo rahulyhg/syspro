@@ -382,6 +382,12 @@
                             </li>
                         <?php } ?>
                         <!-- report notification end -->
+                        <?php if ($this->ion_auth->in_group(array('admin', 'Doctor', 'Nurse'))) { ?>
+                            &nbsp;&nbsp;
+                            <li id="header_notification_bar" class="dropdown">
+                                <a  href="prescription/all"><i class="fa fa-desktop"></i> <strong>Chamar paciente</strong></a>
+                            </li>
+                        <?php } ?>    
                     </ul>
                 </div>
                 <div class="top-nav ">
@@ -677,7 +683,8 @@
                                 </ul>
                             </li>
                         <?php } ?>
-                        <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
+                       <!--
+                         <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
                             <li class="sub-menu">
                                 <a href="javascript:;" >
                                     <i class="fa fa-envelope-o"></i>
@@ -692,6 +699,7 @@
                                 </ul>
                             </li> 
                         <?php } ?>
+                        -->
                         <?php if ($this->ion_auth->in_group(array('admin'))) { ?>
 
                             <li> <li class="sub-menu">
