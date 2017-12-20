@@ -121,21 +121,21 @@
                                                                     echo 'selected';
                                                                 }
                                                             }
-                                                            ?> > Male </option>   
+                                                            ?> > Masculino </option>   
                                                             <option value="Female" <?php
                                                             if (!empty($patient->sex)) {
                                                                 if ($patient->sex == 'Female') {
                                                                     echo 'selected';
                                                                 }
                                                             }
-                                                            ?> > Female </option>
+                                                            ?> > Feminino </option>
                                                             <option value="Others" <?php
                                                             if (!empty($patient->sex)) {
                                                                 if ($patient->sex == 'Others') {
                                                                     echo 'selected';
                                                                 }
                                                             }
-                                                            ?> > Others </option>
+                                                            ?> > Outros </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -147,7 +147,7 @@
                                                 </div>
                                                 <div class="col-md-9"> 
                                                     <select class="form-control m-bot15 js-example-basic-single add_doctor" id="add_doctor" name="doctor" value=''>  
-                                                        <option value="">Select .....</option>
+                                                        <option value="">Selecione .....</option>
                                                         <option value="add_new" style="color: #41cac0 !important;"><?php echo lang('add_new'); ?></option>
                                                         <?php foreach ($doctors as $doctor) { ?>
                                                             <option value="<?php echo $doctor->id; ?>"<?php
@@ -463,27 +463,27 @@ if ($discount_type == 'flat') {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Patient Registration</h4>
+                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Registro de Paciente</h4>
             </div>
             <div class="modal-body">
                 <form role="form" action="patient/addNew?redirect=payment" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
+                        <label for="exampleInputEmail1">Nome</label>
                         <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Address</label>
+                        <label for="exampleInputEmail1">Endereço</label>
                         <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Phone</label>
+                        <label for="exampleInputEmail1">Telefone</label>
                         <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Image</label>
+                        <label for="exampleInputEmail1">Imagem</label>
                         <input type="file" name="img_url">
                     </div>
 

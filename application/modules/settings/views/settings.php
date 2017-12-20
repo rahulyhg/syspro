@@ -39,9 +39,19 @@
                                             }
                                             ?>' placeholder="address">
                                         </div>
+                                        <script type="text/javascript">
+                                            stop = '';
+                                            function mascara( campo ) {
+                                                campo.value = campo.value.replace( /[^\d]/g, '' )
+                                                .replace( /^(\d\d)(\d)/, '($1) $2' )
+                                                .replace( /(\d{5})(\d)/, '$1-$2' );
+                                                if ( campo.value.length > 15 ) campo.value = stop;
+                                                else stop = campo.value;    
+                                            }
+                                        </script>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                                            <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='<?php
+                                            <input type="text" class="form-control" name="phone" onkeydown="mascara( this )" onkeyup="mascara( this )" id="exampleInputEmail1" value='<?php
                                             if (!empty($settings->phone)) {
                                                 echo $settings->phone;
                                             }
@@ -85,48 +95,48 @@
                                             </select>
                                         </div>
                                         
-                                         -->
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1"><?php echo lang('invoice_logo'); ?></label>
-                                            <input type="file" class="form-control" name="img_url" id="exampleInputEmail1" value='<?php
-                                            if (!empty($settings->invoice_logo)) {
-                                                echo $settings->invoice_logo;
-                                            }
-                                            ?>' placeholder="">
-                                            <span class="help-block">Recommended Size: 200x100</span>
-                                        </div>
-                                        <div class="form-group hidden">
-                                            <label for="exampleInputEmail1">Buyer</label>
-                                            <input type="hidden" class="form-control" name="buyer" id="exampleInputEmail1" value='<?php
-                                            if (!empty($settings->codec_username)) {
-                                                echo $settings->buyer;
-                                            }
-                                            ?>' placeholder="codec_username">
-                                        </div>
-                                        <div class="form-group hidden">
-                                            <label for="exampleInputEmail1">Purchase Code</label>
-                                            <input type="hidden" class="form-control" name="p_code" id="exampleInputEmail1" value='<?php
-                                            if (!empty($settings->codec_purchase_code)) {
-                                                echo $settings->phone;
-                                            }
-                                            ?>' placeholder="codec_purchase_code">
-                                        </div>
-                                        <input type="hidden" name="id" value='<?php
-                                        if (!empty($settings->id)) {
-                                            echo $settings->id;
+                                    -->
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1"><?php echo lang('invoice_logo'); ?></label>
+                                        <input type="file" class="form-control" name="img_url" id="exampleInputEmail1" value='<?php
+                                        if (!empty($settings->invoice_logo)) {
+                                            echo $settings->invoice_logo;
                                         }
-                                        ?>'>
-                                        <button type="submit" name="submit" class="btn btn-info"><?php echo lang('submit'); ?></button>
-                                    </form>
-                                </div>
-                            </section>
-                        </div>
+                                        ?>' placeholder="">
+                                        <span class="help-block">Recommended Size: 200x100</span>
+                                    </div>
+                                    <div class="form-group hidden">
+                                        <label for="exampleInputEmail1">Buyer</label>
+                                        <input type="hidden" class="form-control" name="buyer" id="exampleInputEmail1" value='<?php
+                                        if (!empty($settings->codec_username)) {
+                                            echo $settings->buyer;
+                                        }
+                                        ?>' placeholder="codec_username">
+                                    </div>
+                                    <div class="form-group hidden">
+                                        <label for="exampleInputEmail1">Purchase Code</label>
+                                        <input type="hidden" class="form-control" name="p_code" id="exampleInputEmail1" value='<?php
+                                        if (!empty($settings->codec_purchase_code)) {
+                                            echo $settings->phone;
+                                        }
+                                        ?>' placeholder="codec_purchase_code">
+                                    </div>
+                                    <input type="hidden" name="id" value='<?php
+                                    if (!empty($settings->id)) {
+                                        echo $settings->id;
+                                    }
+                                    ?>'>
+                                    <button type="submit" name="submit" class="btn btn-info"><?php echo lang('submit'); ?></button>
+                                </form>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- page end-->
+        </div>
     </section>
+    <!-- page end-->
+</section>
 </section>
 <!--main content end-->
 <!--footer start-->

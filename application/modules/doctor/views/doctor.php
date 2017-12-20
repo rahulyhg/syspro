@@ -35,7 +35,7 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
 
                             .img_url{
                                 height:20px;
@@ -48,29 +48,29 @@
                         </style>
 
                         <?php foreach ($doctors as $doctor) { ?>
-                            <tr class="">
-                                <td><?php echo $doctor->id; ?></td>
-                                <td> <?php echo $doctor->name; ?></td>
-                                <td><?php echo $doctor->email; ?></td>
-                                <td class="center"><?php echo $doctor->address; ?></td>
-                                <td><?php echo $doctor->phone; ?></td>
-                                <td class="center"><?php echo $doctor->department; ?></td>
-                                <td><?php echo $doctor->profile; ?></td>
-                                <td class="no-print">
-                                    <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $doctor->id; ?>"><i class="fa fa-edit"> </i> <?php echo lang('edit'); ?></button>   
-                                    <a class="btn btn-info btn-xs detailsbutton" title="<?php echo lang('appointments'); ?>"  href="appointment/getAppointmentByDoctorId?id=<?php echo $doctor->id; ?>"> <i class="fa fa-calendar"> </i> <?php echo lang('appointments'); ?></a>
-                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="doctor/delete?id=<?php echo $doctor->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"> </i> <?php echo lang('delete'); ?></a>
-                                </td>
-                            </tr>
+                        <tr class="">
+                            <td><?php echo $doctor->id; ?></td>
+                            <td> <?php echo $doctor->name; ?></td>
+                            <td><?php echo $doctor->email; ?></td>
+                            <td class="center"><?php echo $doctor->address; ?></td>
+                            <td><?php echo $doctor->phone; ?></td>
+                            <td class="center"><?php echo $doctor->department; ?></td>
+                            <td><?php echo $doctor->profile; ?></td>
+                            <td class="no-print">
+                                <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $doctor->id; ?>"><i class="fa fa-edit"> </i> <?php echo lang('edit'); ?></button>   
+                                <a class="btn btn-info btn-xs detailsbutton" title="<?php echo lang('appointments'); ?>"  href="appointment/getAppointmentByDoctorId?id=<?php echo $doctor->id; ?>"> <i class="fa fa-calendar"> </i> <?php echo lang('appointments'); ?></a>
+                                <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="doctor/delete?id=<?php echo $doctor->id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"> </i> <?php echo lang('delete'); ?></a>
+                            </td>
+                        </tr>
                         <?php } ?>
 
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </section>
-        <!-- page end-->
+        </div>
     </section>
+    <!-- page end-->
+</section>
 </section>
 <!--main content end-->
 <!--footer start-->
@@ -107,15 +107,25 @@
                         <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
                         <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
                     </div>
+                    <script type="text/javascript">
+                        stop = '';
+                        function mascara( campo ) {
+                            campo.value = campo.value.replace( /[^\d]/g, '' )
+                            .replace( /^(\d\d)(\d)/, '($1) $2' )
+                            .replace( /(\d{5})(\d)/, '$1-$2' );
+                            if ( campo.value.length > 15 ) campo.value = stop;
+                            else stop = campo.value;    
+                        }
+                    </script>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="" onkeydown="mascara( this )" onkeyup="mascara( this )">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('department'); ?></label>
                         <select class="form-control m-bot15 js-example-basic-single" name="department" value=''>
                             <?php foreach ($departments as $department) { ?>
-                                <option value="<?php echo $department->name; ?>"> <?php echo $department->name; ?> </option>
+                            <option value="<?php echo $department->name; ?>"> <?php echo $department->name; ?> </option>
                             <?php } ?> 
                         </select>
                     </div>
@@ -178,14 +188,14 @@
                         <label for="exampleInputEmail1"><?php echo lang('department'); ?></label>
                         <select class="form-control m-bot15 js-example-basic-single department" name="department" value=''>
                             <?php foreach ($departments as $department) { ?>
-                                <option value="<?php echo $department->name; ?>" <?php
-                                if (!empty($doctor->department)) {
-                                    if ($department->name == $doctor->department) {
-                                        echo 'selected';
-                                    }
+                            <option value="<?php echo $department->name; ?>" <?php
+                            if (!empty($doctor->department)) {
+                                if ($department->name == $doctor->department) {
+                                    echo 'selected';
                                 }
-                                ?> > <?php echo $department->name; ?> </option>
-                                    <?php } ?> 
+                            }
+                            ?> > <?php echo $department->name; ?> </option>
+                            <?php } ?> 
                         </select>
                     </div>
                     <div class="form-group">
@@ -208,9 +218,9 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $(".editbutton").click(function (e) {
-                                                e.preventDefault(e);
+    $(document).ready(function () {
+        $(".editbutton").click(function (e) {
+            e.preventDefault(e);
                                                 // Get the record's ID via attribute  
                                                 var iid = $(this).attr('data-id');
                                                 $('#editDoctorForm').trigger("reset");
@@ -234,7 +244,7 @@
                                                     $('.js-example-basic-single.department').val(response.doctor.department).trigger('change');
                                                 });
                                             });
-                                        });
+    });
 </script>
 <script>
     $(document).ready(function () {

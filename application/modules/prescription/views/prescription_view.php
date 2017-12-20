@@ -59,7 +59,7 @@
                         <div class="col-lg-4 col-sm-4" style="float: left;">
                             <h4><?php echo lang('prescription'); ?> <?php echo lang('info'); ?></h4>
                             <ul class="unstyled">
-                                <li><?php echo lang('prescription'); ?> Number		: <strong>000<?php echo $prescription->id; ?></strong></li>
+                                <li>Número <?php echo lang('prescription'); ?>		: <strong>000<?php echo $prescription->id; ?></strong></li>
                                 <li>Date		: <?php echo date('m/d/Y', $prescription->date); ?></li>
                             </ul>
                         </div>

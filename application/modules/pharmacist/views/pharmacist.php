@@ -6,66 +6,66 @@
         <section class="panel">
             <header class="panel-heading">
               <i class="fa fa-user"></i> <?php echo lang('pharmacist'); ?>
-            </header>
-            <div class="panel-body">
-                <div class="adv-table editable-table ">
-                    <div class="clearfix no-print">
-                        <a data-toggle="modal" href="#myModal">
-                            <div class="btn-group">
-                                <button id="" class="btn green">
-                                    <i class="fa fa-plus-circle"></i> <?php echo lang('add_pharmacist'); ?>
-                                </button>
-                            </div>
-                        </a>
-                        <button class="export no-print" onclick="javascript:window.print();">Print</button>  
-                    </div>
-                    <div class="space15"></div>
-                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
-                        <thead>
-                            <tr>
-                                <th><?php echo lang('image'); ?></th>
-                                <th><?php echo lang('name'); ?></th>
-                                <th><?php echo lang('email'); ?></th>
-                                <th><?php echo lang('address'); ?></th>
-                                <th><?php echo lang('phone'); ?></th>
-                                <th class="no-print"><?php echo lang('options'); ?></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+          </header>
+          <div class="panel-body">
+            <div class="adv-table editable-table ">
+                <div class="clearfix no-print">
+                    <a data-toggle="modal" href="#myModal">
+                        <div class="btn-group">
+                            <button id="" class="btn green">
+                                <i class="fa fa-plus-circle"></i> <?php echo lang('add_pharmacist'); ?>
+                            </button>
+                        </div>
+                    </a>
+                    <button class="export no-print" onclick="javascript:window.print();">Print</button>  
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                    <thead>
+                        <tr>
+                            <th><?php echo lang('image'); ?></th>
+                            <th><?php echo lang('name'); ?></th>
+                            <th><?php echo lang('email'); ?></th>
+                            <th><?php echo lang('address'); ?></th>
+                            <th><?php echo lang('phone'); ?></th>
+                            <th class="no-print"><?php echo lang('options'); ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
                         <style>
 
-                            .img_url{
-                                height:20px;
-                                width:20px;
-                                background-size: contain; 
-                                max-height:20px;
-                                border-radius: 100px;
-                            }
+                        .img_url{
+                            height:20px;
+                            width:20px;
+                            background-size: contain; 
+                            max-height:20px;
+                            border-radius: 100px;
+                        }
 
-                        </style>
+                    </style>
 
-                        <?php foreach ($pharmacists as $pharmacist) { ?>
-                            <tr class="">
-                                <td style="width:10%;"><img style="width:95%;" src="<?php echo $pharmacist->img_url; ?>"></td>
-                                <td> <?php echo $pharmacist->name; ?></td>
-                                <td><?php echo $pharmacist->email; ?></td>
-                                <td class="center"><?php echo $pharmacist->address; ?></td>
-                                <td><?php echo $pharmacist->phone; ?></td>
-                                <td class="no-print">
-                                    <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $pharmacist->id; ?>"><i class="fa fa-edit"></i> </button>   
-                                    <a class="btn btn-info btn-xs btn_width delete_button" href="pharmacist/delete?id=<?php echo $pharmacist->id; ?>" title="<?php echo lang('delete'); ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> </a>
-                                </td>
-                            </tr>
-                        <?php } ?>
+                    <?php foreach ($pharmacists as $pharmacist) { ?>
+                    <tr class="">
+                        <td style="width:10%;"><img style="width:95%;" src="<?php echo $pharmacist->img_url; ?>"></td>
+                        <td> <?php echo $pharmacist->name; ?></td>
+                        <td><?php echo $pharmacist->email; ?></td>
+                        <td class="center"><?php echo $pharmacist->address; ?></td>
+                        <td><?php echo $pharmacist->phone; ?></td>
+                        <td class="no-print">
+                            <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $pharmacist->id; ?>"><i class="fa fa-edit"></i> </button>   
+                            <a class="btn btn-info btn-xs btn_width delete_button" href="pharmacist/delete?id=<?php echo $pharmacist->id; ?>" title="<?php echo lang('delete'); ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"></i> </a>
+                        </td>
+                    </tr>
+                    <?php } ?>
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <!-- page end-->
-    </section>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- page end-->
+</section>
 </section>
 <!--main content end-->
 <!--footer start-->
@@ -107,9 +107,19 @@
                         <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
                         <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
                     </div>
+                    <script type="text/javascript">
+                        stop = '';
+                        function mascara( campo ) {
+                            campo.value = campo.value.replace( /[^\d]/g, '' )
+                            .replace( /^(\d\d)(\d)/, '($1) $2' )
+                            .replace( /(\d{5})(\d)/, '$1-$2' );
+                            if ( campo.value.length > 15 ) campo.value = stop;
+                            else stop = campo.value;    
+                        }
+                    </script>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="" onkeydown="mascara( this )" onkeyup="mascara( this )">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('image'); ?></label>
@@ -189,9 +199,9 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $(".editbutton").click(function (e) {
-                                                e.preventDefault(e);
+    $(document).ready(function () {
+        $(".editbutton").click(function (e) {
+            e.preventDefault(e);
                                                 // Get the record's ID via attribute  
                                                 var iid = $(this).attr('data-id');
                                                 $('#editPharmacistForm').trigger("reset");
@@ -211,7 +221,7 @@
                                                     $('#editPharmacistForm').find('[name="phone"]').val(response.pharmacist.phone).end()
                                                 });
                                             });
-                                        });
+    });
 </script>
 <script>
     $(document).ready(function () {

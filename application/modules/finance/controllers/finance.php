@@ -39,9 +39,9 @@ class Finance extends MX_Controller {
         $data['settings'] = $this->settings_model->getSettings();
         $data['payments'] = $this->finance_model->getPayment();
 
-        $this->load->view('home/dashboard'); // just the header file
+        $this->load->view('home/dashboard'); // apenas o arquivo de cabeçalho
         $this->load->view('payment', $data);
-        $this->load->view('home/footer'); // just the header file
+        $this->load->view('home/footer'); // apenas o arquivo de cabeçalho
     }
 
     function amountDistribution() {
@@ -51,9 +51,9 @@ class Finance extends MX_Controller {
         $data['settings'] = $this->settings_model->getSettings();
         $data['payments'] = $this->finance_model->getPayment();
 
-        $this->load->view('home/dashboard'); // just the header file
+        $this->load->view('home/dashboard'); // apenas o arquivo de cabeçalho
         $this->load->view('amount_distribution', $data);
-        $this->load->view('home/footer'); // just the header file
+        $this->load->view('home/footer'); // apenas o arquivo de cabeçalho
     }
 
     public function addPaymentView() {
@@ -63,9 +63,9 @@ class Finance extends MX_Controller {
         $data['categories'] = $this->finance_model->getPaymentCategory();
         $data['patients'] = $this->patient_model->getPatient();
         $data['doctors'] = $this->doctor_model->getDoctor();
-        $this->load->view('home/dashboard'); // just the header file
+        $this->load->view('home/dashboard'); // apenas o arquivo de cabeçalho
         $this->load->view('add_payment_view', $data);
-        $this->load->view('home/footer'); // just the header file
+        $this->load->view('home/footer'); // apenas o arquivo de cabeçalho
     }
 
     public function addPayment() {
@@ -149,7 +149,7 @@ class Finance extends MX_Controller {
                     'how_added' => 'from_pos'
                 );
                 $username = $this->input->post('p_name');
-                // Adding New Patient
+                // Adicionando novo paciente
                 if ($this->ion_auth->email_check($p_email)) {
                     $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                 } else {
@@ -172,7 +172,7 @@ class Finance extends MX_Controller {
                     'phone' => $d_phone,
                 );
                 $username = $this->input->post('d_name');
-                // Adding New Patient
+                // Adicionando novo paciente
                 if ($this->ion_auth->email_check($d_email)) {
                     $this->session->set_flashdata('feedback', 'Este endereço de e-mail já está registrado');
                 } else {

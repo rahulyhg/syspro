@@ -276,7 +276,7 @@ class Pharmacy extends MX_Controller {
             }
 
             $this->pharmacy_model->deletePayment($id);
-            $this->session->set_flashdata('feedback', 'Deleted');
+            $this->session->set_flashdata('feedback', 'Excluído');
             redirect('finance/pharmacy/payment');
         }
     }
@@ -359,7 +359,7 @@ class Pharmacy extends MX_Controller {
     function deleteExpense() {
         $id = $this->input->get('id');
         $this->pharmacy_model->deleteExpense($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         redirect('finance/pharmacy/expense');
     }
 

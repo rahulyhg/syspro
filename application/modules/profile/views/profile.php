@@ -32,7 +32,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1"><?php echo lang('change_password'); ?></label>
-                                                <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="********">
+                                                <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="********" disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>

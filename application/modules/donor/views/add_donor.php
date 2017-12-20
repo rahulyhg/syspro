@@ -75,7 +75,7 @@
                                                         echo 'selected';
                                                     }
                                                 }
-                                                ?> > Male </option>
+                                                ?> > Masculino </option>
                                                 <option value="Female" <?php
                                                 if (!empty($setval)) {
                                                     if (set_value('sex') == 'Female') {
@@ -87,7 +87,7 @@
                                                         echo 'selected';
                                                     }
                                                 }
-                                                ?> > Female </option>
+                                                ?> > Feminino </option>
                                                 <option value="Others" <?php
                                                 if (!empty($setval)) {
                                                     if (set_value('sex') == 'Others') {
@@ -99,7 +99,7 @@
                                                         echo 'selected';
                                                     }
                                                 }
-                                                ?> > Others </option>
+                                                ?> > Outros </option>
                                             </select>
                                         </div>
                                         <div class="form-group">

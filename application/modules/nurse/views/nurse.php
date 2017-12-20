@@ -33,7 +33,7 @@
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
 
                             .img_url{
                                 height:20px;
@@ -46,26 +46,26 @@
                         </style>
 
                         <?php foreach ($nurses as $nurse) { ?>
-                            <tr class="">
-                                <td style="width:10%;"><img style="width:95%;" src="<?php echo $nurse->img_url; ?>"></td>
-                                <td> <?php echo $nurse->name; ?></td>
-                                <td><?php echo $nurse->email; ?></td>
-                                <td class="center"><?php echo $nurse->address; ?></td>
-                                <td><?php echo $nurse->phone; ?></td>
-                                <td class="no-print">
-                                    <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $nurse->id; ?>"><i class="fa fa-edit"> </i></button>   
-                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="nurse/delete?id=<?php echo $nurse->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> </a>
-                                </td>
-                            </tr>
+                        <tr class="">
+                            <td style="width:10%;"><img style="width:95%;" src="<?php echo $nurse->img_url; ?>"></td>
+                            <td> <?php echo $nurse->name; ?></td>
+                            <td><?php echo $nurse->email; ?></td>
+                            <td class="center"><?php echo $nurse->address; ?></td>
+                            <td><?php echo $nurse->phone; ?></td>
+                            <td class="no-print">
+                                <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $nurse->id; ?>"><i class="fa fa-edit"> </i></button>   
+                                <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="nurse/delete?id=<?php echo $nurse->id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"></i> </a>
+                            </td>
+                        </tr>
                         <?php } ?>
 
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
-        </section>
-        <!-- page end-->
+        </div>
     </section>
+    <!-- page end-->
+</section>
 </section>
 <!--main content end-->
 <!--footer start-->
@@ -107,9 +107,19 @@
                         <label for="exampleInputEmail1"><?php echo lang('address'); ?></label>
                         <input type="text" class="form-control" name="address" id="exampleInputEmail1" value='' placeholder="">
                     </div>
+                    <script type="text/javascript">
+                        stop = '';
+                        function mascara( campo ) {
+                            campo.value = campo.value.replace( /[^\d]/g, '' )
+                            .replace( /^(\d\d)(\d)/, '($1) $2' )
+                            .replace( /(\d{5})(\d)/, '$1-$2' );
+                            if ( campo.value.length > 15 ) campo.value = stop;
+                            else stop = campo.value;    
+                        }
+                    </script>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('phone'); ?></label>
-                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="">
+                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1" value='' placeholder="" onkeydown="mascara( this )" onkeyup="mascara( this )">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><?php echo lang('image'); ?></label>
@@ -189,9 +199,9 @@
 
 <script src="common/js/codearistos.min.js"></script>
 <script type="text/javascript">
-                                    $(document).ready(function () {
-                                        $(".editbutton").click(function (e) {
-                                            e.preventDefault(e);
+    $(document).ready(function () {
+        $(".editbutton").click(function (e) {
+            e.preventDefault(e);
                                             // Get the record's ID via attribute  
                                             var iid = $(this).attr('data-id');
                                             $('#editNurseForm').trigger("reset");
@@ -212,7 +222,7 @@
                                             });
 
                                         });
-                                    });
+    });
 </script>
 <script>
     $(document).ready(function () {

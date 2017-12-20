@@ -53,7 +53,7 @@
                                         <!--
                                         <button type="button" class="btn btn-info btn-xs btn_width editbutton" data-toggle="modal" data-id="<?php echo $appointment->id; ?>"><i class="fa fa-edit"> <?php echo lang('edit'); ?></i></button>   
                                         -->
-                                        <a class="btn btn-info btn-xs btn_width delete_button" href="appointment/delete?id=<?php echo $appointment->id; ?>&doctor_id=<?php echo $appointment->doctor; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"> </i></a>
+                                        <a class="btn btn-info btn-xs btn_width delete_button" href="appointment/delete?id=<?php echo $appointment->id; ?>&doctor_id=<?php echo $appointment->doctor; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"> </i></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -134,7 +134,7 @@
                         </div>
                         <div class="col-md-9"> 
                             <select class="form-control m-bot15" name="patient" value=''> 
-                                <option value="">Select .....</option>
+                                <option value="">Selecione .....</option>
                                 <?php foreach ($patients as $patient) { ?>
                                     <option value="<?php echo $patient->id; ?>" <?php
                                     if (!empty($payment->patient)) {
@@ -153,7 +153,7 @@
                         </div>
                         <div class="col-md-9"> 
                             <select class="form-control m-bot15" name="doctor" value=''>  
-                                <option value="">Select .....</option>
+                                <option value="">Selecione .....</option>
                                 <?php foreach ($doctors as $doctor) { ?>
                                     <option value="<?php echo $doctor->id; ?>"<?php
                                     if (!empty($payment->doctor)) {
@@ -225,7 +225,7 @@
                         </div>
                         <div class="col-md-9"> 
                             <select class="form-control m-bot15" name="patient" value=''> 
-                                <option value="">Select .....</option>
+                                <option value="">Selecione .....</option>
                                 <?php foreach ($patients as $patient) { ?>
                                     <option value="<?php echo $patient->id; ?>" <?php
                                     if (!empty($payment->patient)) {
@@ -244,7 +244,7 @@
                         </div>
                         <div class="col-md-9"> 
                             <select class="form-control m-bot15" name="doctor" value=''>  
-                                <option value="">Select .....</option>
+                                <option value="">Selecione .....</option>
                                 <?php foreach ($doctors as $doctor) { ?>
                                     <option value="<?php echo $doctor->id; ?>"<?php
                                     if (!empty($payment->doctor)) {

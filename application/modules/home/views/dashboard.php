@@ -382,7 +382,7 @@
                             </li>
                         <?php } ?>
                         <!-- report notification end -->
-                        <?php if ($this->ion_auth->in_group(array('admin', 'Doctor', 'Nurse'))) { ?>
+                        <?php if ($this->ion_auth->in_group(array('admin', 'Doctor', 'Nurse', 'Receptionist'))) { ?>
                             &nbsp;&nbsp;
                             <li id="header_notification_bar" class="dropdown">
                                 <a  href="prescription/all"><i class="fa fa-desktop"></i> <strong>Chamar paciente</strong></a>

@@ -34,7 +34,7 @@
     
               
                       <form  class="form-signin" method="post" action="auth/forgot_password">
-                          <h2 class="form-signin-heading">Forgot Password ?</h2>
+                          <h2 class="form-signin-heading">Esqueceu a senha ?</h2>
                             <div class="login-wrap">
                                 
                                  

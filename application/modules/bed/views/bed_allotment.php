@@ -52,7 +52,7 @@
                                 <td><?php echo $alloted_bed->d_time; ?></td>
                                 <td class="no-print">
                                     <button type="button" title="<?php echo lang('edit'); ?>" class="btn btn-info btn-xs btn_width editbutton" data-toggle="modal" data-id="<?php echo $alloted_bed->id; ?>"><i class="fa fa-edit"></i> </button>   
-                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="bed/deleteAllotment?id=<?php echo $alloted_bed->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> </a>
+                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="bed/deleteAllotment?id=<?php echo $alloted_bed->id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"></i> </a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -85,7 +85,7 @@
                 <form role="form" action="bed/addAllotment" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Bed Id</label>
+                        <label for="exampleInputEmail1">Código Leito</label>
                         <select class="form-control m-bot15" name="bed_id" value=''>
                             <?php foreach ($beds as $bed) { ?>
                                 <option value="<?php echo $bed->bed_id; ?>" <?php
@@ -99,7 +99,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Patient</label>
+                        <label for="exampleInputEmail1">Paciente</label>
                         <select class="form-control m-bot15" name="patient" value=''> 
                             <?php foreach ($patients as $patient) { ?>
                                 <option value="<?php echo $patient->name; ?>" <?php
@@ -162,7 +162,7 @@
                 <form role="form" id="editAllotmentForm" action="bed/addAllotment" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Bed Id</label>
+                        <label for="exampleInputEmail1">Código Leito</label>
                         <select class="form-control m-bot15" name="bed_id" value=''>
                             <?php foreach ($beds as $bed) { ?>
                                 <option value="<?php echo $bed->bed_id; ?>" <?php

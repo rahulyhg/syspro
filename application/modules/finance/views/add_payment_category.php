@@ -22,7 +22,7 @@
                                     <?php echo validation_errors(); ?>
                                     <form role="form" action="finance/addPaymentCategory" method="post" enctype="multipart/form-data">
                                         <div class="form-group"> 
-                                            <label for="exampleInputEmail1"><?php echo lang('category'); ?> <?php echo lang('name'); ?></label>
+                                            <label for="exampleInputEmail1"><?php echo lang('code_procedure'); ?></label>
                                             <input type="text" class="form-control" name="category" id="exampleInputEmail1" value='<?php
                                             if (!empty($setval)) {
                                                 echo set_value('category');
@@ -44,6 +44,91 @@
                                             }
                                             ?>' placeholder="">
                                         </div>
+                                        
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1"><?php echo lang('type'); ?></label>
+                                            <select class="form-control m-bot15" name="type" value=''>    
+                                                <option value="unimed" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == 'unimed') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == 'unimed') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang('unimed_plan'); ?> </option>
+
+                                                <option value="bradesco" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == 'bradesco') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == 'bradesco') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang('bradesco_plan'); ?> </option>
+
+                                                <option value="allianz" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == 'allianz') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == 'allianz') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang('allianz_plan'); ?> </option>
+
+                                                <option value="amil" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == 'amil') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == 'amil') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang('amil_plan'); ?> </option>
+
+                                                <option value="sus" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == 'sus') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == 'sus') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang('health_unic_system'); ?> </option>  
+
+                                                <option value="" <?php
+                                                if (!empty($setval)) {
+                                                    if (set_value('type') == '') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                if (!empty($category->type)) {
+                                                    if ($category->type == '') {
+                                                        echo 'selected';
+                                                    }
+                                                }
+                                                ?> > <?php echo lang(''); ?> </option>  
+                                            </select>
+                                        </div>
+
                                         <div class="form-group">
                                             <label for="exampleInputEmail1"><?php echo lang('category'); ?> <?php echo lang('price'); ?></label>
                                             <input type="text" class="form-control" name="c_price" id="exampleInputEmail1" value='<?php
@@ -67,41 +152,11 @@
                                             ?>' placeholder="">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1"><?php echo lang('type'); ?></label>
-                                            <select class="form-control m-bot15" name="type" value=''>    
-                                                <option value="diagnostic" <?php
-                                                if (!empty($setval)) {
-                                                    if (set_value('type') == 'diagnostic') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                if (!empty($category->type)) {
-                                                    if ($category->type == 'diagnostic') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                ?> > <?php echo lang('diagnostic_test'); ?> </option>  
-                                                <option value="others" <?php
-                                                if (!empty($setval)) {
-                                                    if (set_value('type') == 'others') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                if (!empty($category->type)) {
-                                                    if ($category->type == 'others') {
-                                                        echo 'selected';
-                                                    }
-                                                }
-                                                ?> > <?php echo lang('others'); ?> </option>  
-                                            </select>
-                                        </div>
-
                                         <input type="hidden" name="id" value='<?php
-                                                if (!empty($category->id)) {
-                                                    echo $category->id;
-                                                }
-                                                ?>'>
+                                        if (!empty($category->id)) {
+                                            echo $category->id;
+                                        }
+                                        ?>'>
                                         <button type="submit" name="submit" class="btn btn-info"><?php echo lang('submit'); ?></button>
                                     </form>
                                 </div>

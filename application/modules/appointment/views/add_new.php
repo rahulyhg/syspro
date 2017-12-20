@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="col-md-9"> 
                                                 <select class="form-control m-bot15 js-example-basic-single pos_select" id="pos_select" name="patient" value=''> 
-                                                    <option value="">Select .....</option>
+                                                    <option value="">Selecione .....</option>
                                                     <option value="add_new" style="color: #41cac0 !important;"><?php echo lang('add_new'); ?></option>
                                                     <?php foreach ($patients as $patient) { ?>
                                                         <option value="<?php echo $patient->id; ?>" <?php
@@ -120,21 +120,21 @@
                                                                 echo 'selected';
                                                             }
                                                         }
-                                                        ?> > Male </option>   
+                                                        ?> > Masculino </option>   
                                                         <option value="Female" <?php
                                                         if (!empty($patient->sex)) {
                                                             if ($patient->sex == 'Female') {
                                                                 echo 'selected';
                                                             }
                                                         }
-                                                        ?> > Female </option>
+                                                        ?> > Feminino </option>
                                                         <option value="Others" <?php
                                                         if (!empty($patient->sex)) {
                                                             if ($patient->sex == 'Others') {
                                                                 echo 'selected';
                                                             }
                                                         }
-                                                        ?> > Others </option>
+                                                        ?> > Outros </option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -146,7 +146,7 @@
                                             </div>
                                             <div class="col-md-9"> 
                                                 <select class="form-control m-bot15 js-example-basic-single" name="doctor" value=''>  
-                                                    <option value="">Select .....</option>
+                                                    <option value="">Selecione .....</option>
                                                     <?php foreach ($doctors as $doctor) { ?>
                                                         <option value="<?php echo $doctor->id; ?>"<?php
                                                         if (!empty($payment->doctor)) {
@@ -224,7 +224,7 @@
                                             <div class="col-md-3 payment_label"> 
                                             </div>
                                             <div class="col-md-9"> 
-                                                <input type="checkbox" name="sms" value="sms"> <?php echo lang('send_sms') ?><br>
+
                                             </div>
                                         </div>
 

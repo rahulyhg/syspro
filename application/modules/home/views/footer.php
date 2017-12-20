@@ -1,6 +1,6 @@
 <footer class="site-footer">
     <div class="text-center">
-        20<?php echo date('y'); ?> &copy; <?php echo $this->db->get('settings')->row()->system_vendor; ?> | FACS SYSTEM.
+        20<?php echo date('y'); ?> &copy; <?php echo $this->db->get('settings')->row()->system_vendor; ?> | CODING REALITY.
         <a href="<?php echo current_full_url() . '#'; ?>" class="go-top">
             <i class="fa fa-angle-up"></i>
         </a>

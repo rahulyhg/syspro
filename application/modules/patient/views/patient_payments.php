@@ -176,21 +176,21 @@
                                     echo 'selected';
                                 }
                             }
-                            ?> > Male </option>
+                            ?> > Masculino </option>
                             <option value="Female" <?php
                             if (!empty($patient->sex)) {
                                 if ($patient->sex == 'Female') {
                                     echo 'selected';
                                 }
                             }
-                            ?> > Female </option>
+                            ?> > Feminino </option>
                             <option value="Others" <?php
                             if (!empty($patient->sex)) {
                                 if ($patient->sex == 'Others') {
                                     echo 'selected';
                                 }
                             }
-                            ?> > Others </option>
+                            ?> > Outros </option>
                         </select>
                     </div>
 

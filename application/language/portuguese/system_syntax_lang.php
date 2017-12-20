@@ -115,11 +115,11 @@ $lang['gender'] = 'Gênero';
 
 $lang['appointments'] = 'Agendamentos';
 $lang['appointment'] = 'Agendamento';
-$lang['id'] = 'Identidade';
+$lang['id'] = 'Código';
 $lang['date-time'] = 'Data hora';
 $lang['remarks'] = 'Observações';
-$lang['add_appointment'] = 'Adicionar nomeação';
-$lang['edit_appointment'] = 'Editar nomeação';
+$lang['add_appointment'] = 'Adicionar Agendamento';
+$lang['edit_appointment'] = 'Editar Agendamento';
 
 
 // Nurse
@@ -160,6 +160,8 @@ $lang['submit'] = 'Enviar';
 $lang['add_more_categories'] = 'Adicione mais categorias';
 
 $lang['category'] = 'Categoria';
+
+$lang['code_procedure'] = 'Código Procedimento';
 
 $lang['expenses'] = 'Despesas';
 $lang['add_expense'] = 'Adicionar despesa';
@@ -218,11 +220,11 @@ $lang['donor'] = 'Doador';
 $lang['donor_list'] = 'Lista de doadores';
 $lang['add_donor'] = 'Adicionar Doador';
 $lang['edit_donor'] = 'Editar doador';
-$lang['age'] = 'Era';
+$lang['age'] = 'Idade';
 $lang['sex'] = 'Sexo';
 $lang['last_donation_date'] = 'Data da última doação';
 $lang['male'] = 'Masculino';
-$lang['female'] = 'Fêmea';
+$lang['female'] = 'Feminino';
 $lang['blood_bank'] = 'Banco de sangue';
 $lang['update_blood_bank'] = 'Atualizar Sangue Banco';
 $lang['group'] = 'Grupo';
@@ -238,7 +240,7 @@ $lang['bed_category'] = 'Categoria de leito';
 $lang['bed_allotments'] = 'Aluguéis de leito';
 $lang['add_allotment'] = 'Adicionar alocação';
 $lang['edit_allotment'] = 'Editar alocação';
-$lang['bed_id'] = 'leito Identidade';
+$lang['bed_id'] = 'leito Código';
 $lang['bed_number'] = 'Número de leito';
 $lang['add_bed_category'] = 'Adicionar categoria de leito';
 $lang['edit_bed_category'] = 'Editar categoria de leito';
@@ -263,7 +265,7 @@ $lang['operation'] = 'Operação';
 $lang['expire'] = 'Expirar';
 $lang['select_type'] = 'Selecione o tipo';
 $lang['myreports'] = 'Meus Relatórios';
-$lang['type'] = 'Tipo';
+$lang['type'] = 'Tipo de Proced';
 $lang['expire_report'] = 'Relatório de encerramento';
 
 //Settings
@@ -314,7 +316,7 @@ $lang['bill_to'] = 'Projeto de lei para';
 
 $lang['patient'] = 'Paciente';
 
-$lang['refd_by_doctor'] = 'Refd By Médico';
+$lang['refd_by_doctor'] = 'Médico';
 
 $lang['date'] = 'Encontro';
 
@@ -457,7 +459,7 @@ $lang['files'] = 'arquivos';
 $lang['prescription'] = 'Prescrição';
 
 $lang['view'] = 'Visão';
-$lang['note'] = 'Nota';
+$lang['note'] = 'Observação';
 $lang['medication'] = 'Medicação';
 $lang['add_prescription'] = 'Adicionar prescrição';
 $lang['edit_prescription'] = 'Editar Prescrição';
@@ -607,6 +609,16 @@ $lang['sms_settings'] = 'Configurações do SMS';
 $lang['doctor_id'] = 'ID do médico';
 
 $lang['diagnostic_test'] = 'Teste de diagnostico';
+
+$lang['unimed_plan'] = 'Unimed';
+
+$lang['bradesco_plan'] = 'Bradesco Saúde';
+
+$lang['allianz_plan'] = 'Allianz Saúde';
+
+$lang['amil_plan'] = 'Amil Saúde';
+
+$lang['health_unic_system'] = 'SUS';
 
 $lang['report_result'] = 'Relatório Resultado';
 

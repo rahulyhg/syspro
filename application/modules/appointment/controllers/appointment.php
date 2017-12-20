@@ -658,7 +658,7 @@ class Appointment extends MX_Controller {
         $id = $this->input->get('id');
         $doctor_id = $this->input->get('doctor_id');
         $this->appointment_model->delete($id);
-        $this->session->set_flashdata('feedback', 'Deleted');
+        $this->session->set_flashdata('feedback', 'Excluído');
         if (!empty($doctor_id)) {
             redirect('appointment/getAppointmentByDoctorId?id=' . $doctor_id);
         } else {

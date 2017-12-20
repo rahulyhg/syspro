@@ -23,19 +23,20 @@ Payment<!--sidebar end-->
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                             <tr>
-                                <th><?php echo lang('category'); ?> <?php echo lang('name'); ?></th>
+                                <th><?php echo lang('id'); ?></th>
                                 <th><?php echo lang('description'); ?></th>
-                                <th><?php echo lang('category'); ?> <?php echo lang('price'); ?> ( <?php echo $settings->currency; ?> )</th>
-                                <th><?php echo lang('doctors_commission'); ?></th>
+                                <th><?php echo lang('code_procedure'); ?></th>
                                 <th><?php echo lang('type'); ?></th>
+                                <th><?php echo lang('price'); ?> ( <?php echo $settings->currency; ?> )</th>
+                                <th><?php echo lang('doctors_commission'); ?></th>
                                 <?php if ($this->ion_auth->in_group(array('admin', 'Accountant'))) { ?>
-                                    <th class="no-print"><?php echo lang('options'); ?></th>
+                                <th class="no-print"><?php echo lang('options'); ?></th>
                                 <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
 
-                        <style>
+                            <style>
 
                             .img_url{
                                 height:20px;
@@ -48,34 +49,65 @@ Payment<!--sidebar end-->
                         </style>
 
                         <?php foreach ($categories as $category) { ?>
-                            <tr class="">
-                                <td><?php echo $category->category; ?></td>   
-                                <td> <?php echo $category->description; ?></td>
-                                <td> <?php echo $category->c_price; ?></td>
-                                <td> <?php echo $category->d_commission; ?> %</td>
-                                <td> <?php
-                                    if ($category->type == 'diagnostic') {
-                                        echo lang('diagnostic_test');
-                                    } else {
-                                        echo lang('others');
-                                    }
-                                    ?>
-                                </td>
-                                <?php if ($this->ion_auth->in_group(array('admin', 'Accountant'))) { ?>
-                                    <td class="no-print">
-                                        <a class="btn btn-info btn-xs editbutton" title="<?php echo lang('edit'); ?>" href="finance/editPaymentCategory?id=<?php echo $category->id; ?>"><i class="fa fa-edit"> </i></a>
-                                        <a class="btn btn-info btn-xs delete_button" title="<?php echo lang('delete'); ?>" href="finance/deletePaymentCategory?id=<?php echo $category->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"></i> </a>
-                                    </td>
-                                <?php } ?>
-                            </tr>
+                        <tr class="">
+                            <td><?php echo $category->id; ?></td>
+                            <td><?php echo $category->category; ?></td>   
+                            <td> <?php echo $category->description; ?></td>
+                            <td> <?php
+                            if ($category->type == 'unimed')
+                            {
+
+                                echo lang('unimed_plan');
+
+                            } else if ($category->type == 'bradesco') 
+                            {
+
+                                echo lang('bradesco_plan');
+
+                            } else if ($category->type == 'diagnostic') 
+                            {
+
+                                echo lang('diagnostic_test');
+
+                            } else if ($category->type == 'allianz')
+                            {
+
+                                echo lang('allianz_plan');
+
+                            } else if ($category->type == 'amil')
+                            {
+
+                                echo lang('amil_plan');
+
+                            } else if ($category->type == 'sus')
+                            {
+
+                                echo lang('health_unic_system');
+
+                            } else {
+                                echo lang('');
+                            }
+
+
+                            ?>
+                        </td>
+                        <td> <?php echo $category->c_price; ?></td>
+                        <td> <?php echo $category->d_commission; ?> %</td>
+                        <?php if ($this->ion_auth->in_group(array('admin', 'Accountant'))) { ?>
+                        <td class="no-print">
+                            <a class="btn btn-info btn-xs editbutton" title="<?php echo lang('edit'); ?>" href="finance/editPaymentCategory?id=<?php echo $category->id; ?>"><i class="fa fa-edit"> </i></a>
+                            <a class="btn btn-info btn-xs delete_button" title="<?php echo lang('delete'); ?>" href="finance/deletePaymentCategory?id=<?php echo $category->id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"></i> </a>
+                        </td>
                         <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <!-- page end-->
-    </section>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- page end-->
+</section>
 </section>
 <!--main content end-->
 <!--footer start-->

@@ -78,7 +78,7 @@
                                 </td>
                                 <td class="no-print">
                                     <button type="button" class="btn btn-info btn-xs btn_width editbutton" title="<?php echo lang('edit'); ?>" data-toggle="modal" data-id="<?php echo $bed->id; ?>"><i class="fa fa-edit"> </i></button>   
-                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="bed/delete?id=<?php echo $bed->id; ?>" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash-o"> </i></a>
+                                    <a class="btn btn-info btn-xs btn_width delete_button" title="<?php echo lang('delete'); ?>" href="bed/delete?id=<?php echo $bed->id; ?>" onclick="return confirm('Tem certeza de que deseja excluir este item?');"><i class="fa fa-trash-o"> </i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -105,12 +105,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Add New Bed</h4>
+                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Adicionar nova Leito</h4>
             </div>
             <div class="modal-body">
                 <form role="form" action="bed/addBed" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Bed Category</label>
+                        <label for="exampleInputEmail1">Categoria de Leitos</label>
                         <select class="form-control m-bot15" name="category" value=''>
                             <?php foreach ($categories as $category) { ?>
                                 <option value="<?php echo $category->category; ?>" <?php
@@ -124,11 +124,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Bed Number</label>
+                        <label for="exampleInputEmail1">Número de Leitos</label>
                         <input type="text" class="form-control" name="number" id="exampleInputEmail1" value='' placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
+                        <label for="exampleInputEmail1">Descrição</label>
                         <input type="text" class="form-control" name="description" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
